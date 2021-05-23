@@ -13,6 +13,7 @@ export function DefaultTab() {
         buttonTitle='Convert'
         type='number'
         onSubmit={handleSubmit}
+        className='my-3'
       />
       {state.result && (
         <div className='dashboard_result-container p-2 d-flex flex-column'>

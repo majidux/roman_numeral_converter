@@ -13,6 +13,7 @@ export function SecondTab() {
         buttonTitle='Convert'
         type='text'
         onSubmit={handleSubmit}
+        className='my-3'
       />
       {state.result && (
         <div className='dashboard_result-container p-2 d-flex flex-column'>
