@@ -24,12 +24,15 @@ export const RomanNumerals = {
     }
     return str;
   },
-  fromRoman: ({ num }: fromRomanProps): any => {
+  fromRoman: ({ num }: fromRomanProps): number | string => {
     let accelerator = 0;
     try {
       for (let i = 0; i < num.length; i++) {
         const currentNumber = romanKeys[num[i]];
         const nextNumber = romanKeys[num[i + 1]];
+        if (!currentNumber) {
+          return 'Please enter valid roman number';
+        }
         currentNumber < nextNumber
           ? (accelerator -= currentNumber)
           : (accelerator += currentNumber);

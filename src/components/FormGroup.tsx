@@ -9,6 +9,10 @@ interface FormGroupProps {
   type?: 'text' | 'number';
 }
 
+interface StateTypes {
+  value: string;
+}
+
 export function FormGroup(props: FormGroupProps) {
   const {
     onSubmit,
@@ -17,7 +21,7 @@ export function FormGroup(props: FormGroupProps) {
     buttonTitle = 'Submit',
     className = '',
   } = props;
-  const [state, setState] = useStates<any>({ value: '' });
+  const [state, setState] = useStates<StateTypes>({ value: '' });
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     onSubmit?.(state.value, event);

@@ -1,7 +1,11 @@
 import { FormGroup, RomanNumerals, useStates } from '../../utils';
 
+interface StateTypes {
+  result?: string | number;
+}
+
 export function DefaultTab() {
-  const [state, setState] = useStates({ result: '' });
+  const [state, setState] = useStates<StateTypes>({ result: '' });
   const handleSubmit = (value: string) => {
     const result = RomanNumerals.toRoman({ num: parseInt(value) });
     setState({ result });
