@@ -1,0 +1,24 @@
+.dashboard-container {
+  background-color: lightblue;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+.dashboard_container-column {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dashboard_result-text {
+  word-break: break-all;
+}
+
+.dashboard_result-container {
+  background: rgba(255, 235, 205, 0.5);
+  flex: 1;
+  margin: 1rem 0 0 0;
+}
