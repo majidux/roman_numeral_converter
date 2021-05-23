@@ -1,4 +1,4 @@
-import { romanKeys } from './romanDigits';
+import { romanKeys } from "./romanDigits";
 
 interface toRomanProps {
   num: number;
@@ -8,16 +8,16 @@ interface fromRomanProps {
   num: string;
 }
 
-const ERROR_MESSAGE = 'Number is too big:';
+const ERROR_MESSAGE = "Number is too big:";
 
 export const RomanNumerals = {
   toRoman: ({ num }: toRomanProps): string => {
-    let str = '';
+    let str = "";
     try {
       for (const key of Object.keys(romanKeys)) {
-        const q = Math.floor(num / romanKeys[key]);
-        num -= q * romanKeys[key];
-        str += key.repeat(q);
+        const division = Math.floor(num / romanKeys[key]);
+        num -= division * romanKeys[key];
+        str += key.repeat(division);
       }
     } catch (error) {
       return `${ERROR_MESSAGE} ${error}`;
@@ -31,7 +31,7 @@ export const RomanNumerals = {
         const currentNumber = romanKeys[num[i]];
         const nextNumber = romanKeys[num[i + 1]];
         if (!currentNumber) {
-          return 'Please enter valid roman number';
+          return "Please enter valid roman number";
         }
         currentNumber < nextNumber
           ? (accelerator -= currentNumber)
