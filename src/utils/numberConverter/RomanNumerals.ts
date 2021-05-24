@@ -18,6 +18,9 @@ export const RomanNumerals = {
         const division = Math.floor(num / romanKeys[key]);
         num -= division * romanKeys[key];
         str += key.repeat(division);
+        if(num === 0) {
+          return str;
+        }
       }
     } catch (error) {
       return `${ERROR_MESSAGE} ${error}`;
